@@ -1,0 +1,11 @@
+<h1>Listing Attractions</h1>
+
+<div>Name : Tickets : Details</div>
+
+<ul>
+  <% @attractions.each do |a| %>
+    <li><%= a.name + " : " + a.tickets.to_s + " : " %><%= link_to session[:admin] ? "Show #{a.name}" : "Go on #{a.name}", attraction_path(a.id) %></li>
+  <% end %>
+</ul>
+
+<%= session[:admin] ? link_to('New Attraction', new_attraction_path) : ''%>

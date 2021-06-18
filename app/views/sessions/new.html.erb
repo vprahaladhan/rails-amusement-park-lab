@@ -1,0 +1,11 @@
+<%= form_for(@user, url: sessions_path) do |f| %>
+  <div>
+    <%= f.label "Your name" %>
+    <%= f.select(:name, @users, {}, {:class => 'my_style_class'}) %>
+  </div>
+  <div>
+    <%= f.label "Password" %>
+    <%= text_field_tag 'password'  %>
+  </div>
+  <input type='submit' value="Sign In">
+<% end %>
